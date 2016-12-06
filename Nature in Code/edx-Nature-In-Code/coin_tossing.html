@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coin Tossing</title>
+    <script type="text/javascript">
+
+        function toss_coins() {
+            var coins = 10;
+            var heads = 0;
+            var tails = 0;
+
+            for (var i = 0; i < coins; i++) {
+                if (Math.random() <= 0.5) {
+                    heads++;
+                } else {
+                    tails++;
+                }
+            }
+
+            if (heads == 8) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        var repeats = 1000000;
+        var counter = 0;
+        for (var i = 0; i< repeats; i++){
+            var desired_outcome = toss_coins();
+            if (desired_outcome == true){
+                counter ++;
+            }
+        }
+        console.log("Getting 8 heads, 2 tails", counter/repeats*100, "% of the time");
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
