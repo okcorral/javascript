@@ -2,17 +2,17 @@
   <library name="Generated files" type="javaScript">
     <properties>
       <sourceFilesUrls>
-        <item url="file://$PROJECT_DIR$/dist/strings.js" />
-        <item url="file://$PROJECT_DIR$/dist/strings_and_numbers.js" />
-        <item url="file://$PROJECT_DIR$/dist/params_and_spread.js" />
         <item url="file://$PROJECT_DIR$/dist/data_structures.js" />
+        <item url="file://$PROJECT_DIR$/dist/params_and_spread.js" />
+        <item url="file://$PROJECT_DIR$/dist/strings_and_numbers.js" />
+        <item url="file://$PROJECT_DIR$/dist/strings.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/dist/strings.js" />
-      <root url="file://$PROJECT_DIR$/dist/strings_and_numbers.js" />
-      <root url="file://$PROJECT_DIR$/dist/params_and_spread.js" />
       <root url="file://$PROJECT_DIR$/dist/data_structures.js" />
+      <root url="file://$PROJECT_DIR$/dist/params_and_spread.js" />
+      <root url="file://$PROJECT_DIR$/dist/strings_and_numbers.js" />
+      <root url="file://$PROJECT_DIR$/dist/strings.js" />
     </CLASSES>
     <SOURCES />
   </library>
