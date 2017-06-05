@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Observable Arrays</title>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
+</head>
+<body>
+    <h1>Cat List</h1>
+    <ul data-bind="foreach: userArray1">
+        <li data-bind="text: $data"></li>
+    </ul>
+
+    <h1>Outside Cat Table</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Color</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: userArray2">
+            <tr>
+                <td data-bind="text: name"></td>
+                <td data-bind="text: color"></td>
+            </tr>
+        </tbody>
+    </table>
+
+<script>
+    var userArray1 = ko.observableArray(['Oro','Absinthe','Noisette']);
+    var userArray2 = ko.observableArray([
+        {name: 'Dahlia', color:'black'},
+        {name: 'Sylvie', color:'black and white'},
+        {name: 'Gingko', color:'white and black'}
+    ]);
+
+
+    //alert('There are ' + userArray1().length + ' Cats in the array');
+    //userArray1.push('Harry');
+    //alert(userArray1()[3]);
+
+    //alert(userArray2()[0].firstName);
+
+    ko.applyBindings();
+
+</script>
+</body>
+</html>

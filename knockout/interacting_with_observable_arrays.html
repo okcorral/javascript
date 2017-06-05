@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interacting with Observable Arrays</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h4>Cats</h4>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Index</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: cats">
+            <tr>
+                <td data-bind="text: $index">Index</td>
+                <td data-bind="text: name">Name</td>
+                <td><a class="btn btn-danger"  href="#" data-bind="click: $parent.removeCat">Remove</a></td>
+            </tr>
+            </tbody>
+        </table>
+        <input type="text" id="newCat">
+        <button class="btn btn-primary" data-bind="click: addCat">Add Cat</button>
+
+    </div>
+
+    <script>
+        function viewModel(){
+            var self = this;
+
+            self.cats = ko.observableArray([
+                {name: 'Oro'},
+                {name: 'Absinthe'},
+                {name: 'Noisette'}
+            ]);
+
+            self.addCat = function(){
+                self.cats.push({name: $('#newCat').val()});
+            }
+
+            self.removeCat = function(){
+                self.cats.remove(this);
+            }
+        }
+
+        ko.applyBindings(new viewModel());
+    </script>
+</body>
+</html>
